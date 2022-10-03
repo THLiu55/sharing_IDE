@@ -24,7 +24,7 @@ function login() {
   let frame = document.getElementById("frame-id");
   var s = "<iframe id='iframe' src='http://localhost:3000?id="
   s += id;
-  s += "'frameborder='0' width='100%' height='700px'></iframe>"
+  s += "'frameborder='0' width='100%' height='600px'></iframe>"
   frame.innerHTML += s
   presetting.login(false, options => {
     rtc = new RtcClient(options);
@@ -149,7 +149,7 @@ function setBtnClickFuc() {
         return;
       }
       if ($('#screen-btn').attr('src') == './img/screen-on.png') {
-        $('#screen-btn').attr('src', './img/screen-off.png');
+        $('#screen-btn').attr('src', './vedio/img/screen-off.png');
         stopSharing();
         isScreenOn = false;
       } else {
@@ -358,9 +358,9 @@ function resetView() {
   isScreenOn = false;
   isJoined = true;
   $('#main-video-btns').hide();
-  $('#video-btn').attr("src", "./vedio/img/big-camera-on.png");
+  $('#video-btn').attr("src", "./video/img/big-camera-on.png");
   $('#mic-btn').attr('src', './vedio/img/big-mic-on.png');
-  $('#screen-btn').attr('src', "./vedio/img/screen-off.png");
+  $('#screen-btn').attr('src', "./video/img/screen-off.png");
   $('#member-me')
     .find('.member-video-btn')
     .attr('src', 'img/camera-on.png');

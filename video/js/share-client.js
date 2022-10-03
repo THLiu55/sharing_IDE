@@ -48,11 +48,11 @@ class ShareClient {
       this.localStream_.on('screen-sharing-stopped', event => {
         console.log('share stream video track ended');
         this.leave();
-        $('#screen-btn').attr('src', './img/screen-off.png');
+        $('#screen-btn').attr('src', './video/img/screen-off.png');
       });
     } catch (error) {
       console.error('fail to initialize share stream -', error);
-      $('#screen-btn').attr('src', 'img/screen-off.png');
+      $('#screen-btn').attr('src', './video/img/screen-off.png');
       switch (error.name) {
         case 'NotReadableError':
           alert('屏幕分享失败，请确保系统允许当前浏览器获取屏幕内容');

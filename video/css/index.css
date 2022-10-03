@@ -106,8 +106,8 @@ div{
 }
 .device-connect-list{
     width: 310px;
-    height: 70px;
-    position: absolute;
+    height: 45px;
+    /* position: absolute; */
     bottom: 50px;
     background-color: #fff;
     border-radius: 5px;
@@ -145,6 +145,7 @@ div{
     text-align: center;
     position: relative;
     opacity: 0.8;
+    margin-top: 7px;
 }
 .device-icon{
     width: 20px;

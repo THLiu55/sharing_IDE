@@ -245,9 +245,9 @@ async function deviceTestingInit() {
     await localStream.switchDevice('audio', newMicID);
   });
 
-  $('body').on('click', function() {
-    $('#device-connect-list').hide();
-  });
+  // $('body').on('click', function() {
+  //   $('#device-connect-list').hide();
+  // });
 
   // 获取设备信息
   await getDevicesInfo();
@@ -321,9 +321,9 @@ function deviceDialogInit() {
     // 在首页展示设备连接结果
     let showDeviceStatus = function() {
       $('#device-connect-list').show();
-      timeout = setTimeout(() => {
-        $('#device-connect-list').hide();
-      }, 3000);
+      // timeout = setTimeout(() => {
+      //   $('#device-connect-list').hide();
+      // }, 300000);
       $('#connect-camera').css('color', `${hasCameraConnect ? 'green' : 'red'}`);
       $('#connect-voice').css('color', `${hasVoiceConnect ? 'green' : 'red'}`);
       $('#connect-mic').css('color', `${hasMicConnect ? 'green' : 'red'}`);
