@@ -99,5 +99,5 @@ div[id^=player] {
 }
 .framenvideocontainer{
     display: grid;
-    grid-template-columns: 900px 300px;
+    grid-template-columns: 80% 20%;
 }
