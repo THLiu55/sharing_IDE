@@ -71,6 +71,8 @@ video{
 #video-grid>div{
     position: relative;
     padding: 10px;
+    width: 250px;
+    height: 200px;
 }
 #main-video{
 
@@ -94,4 +96,8 @@ video{
 }
 div[id^=player] {
     background-color: #d8d8d8 !important;
+}
+.framenvideocontainer{
+    display: grid;
+    grid-template-columns: 900px 300px;
 }
