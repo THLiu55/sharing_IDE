@@ -24,9 +24,10 @@ div{
     display: flex;
     /* align-items: center; */
 }
-/* .row-div{ */
-    /* flex-direction: row; */
-/* } */
+.row-div{ 
+    flex-direction: row; 
+
+ }
 .col-div{
     flex-direction: column;
 }

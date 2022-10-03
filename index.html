@@ -417,33 +417,39 @@
                 <div id="frame-id">
 
                 </div>
-
-
                 <!-- 视频网格 -->
                 <div id="video-grid" style="height: 20px; flex: 1; ">
                     <!-- 主视频 -->
                     <div id="main-video" class="video-box" style="justify-content: flex-end">
                         <!-- 主视频控制按钮 -->
-                        <div id="main-video-btns" class="row-div"
+                        <div id="main-video-btns" class="row-div videobtnn"
                             style="width: 156px; position: absolute; z-index: 10; justify-content: center; align-self: flex-end">
-                            <img id="video-btn" style="width: 68px; height: 68px" onClick="event.cancelBubble = true"
+                            <img id="video-btn" style="width: 50px; height: 50px" onClick="event.cancelBubble = true"
                                 src="./video/img/big-camera-on.png" alt="">
-                            <img id="mic-btn" style="width: 68px; height: 68px" onClick="event.cancelBubble = true"
+                            <img id="mic-btn" style="width: 50px; height: 50px" onClick="event.cancelBubble = true"
                                 src="./video/img/big-mic-on.png" alt="">
-                        </div>
+                            
+                            </div>
                         <div id="mask_main" class="mask col-div">
                             <!-- “摄像头未开启”遮罩 -->
                             <div
                                 style="height: 100%; width: 100%; position: absolute; background-color: #D8D8D8; top: 0; left: 0;">
                             </div>
-                            <img style="width: 63px; height: 69px; z-index: 10;" src="./video/img/camera-max.png"
+                            <img style="width: 63px; height: 69px; z-index: 10; margin-left: 80px;" src="./video/img/camera-max.png"
                                 alt="">
                             <div style="height: 10px"></div>
-                            <div style="z-index: 10">摄像头未打开</div>
+                            <div style="z-index: 10; margin-left: 80px;">Camera OFF</div>
                         </div>
                     </div>
                     <!-- 小视频 -->
                 </div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                
             </div>
         </div>
     </div>

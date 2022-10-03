@@ -24,7 +24,7 @@ function login() {
   let frame = document.getElementById("frame-id");
   var s = "<iframe id='iframe' src='http://localhost:3000?id="
   s += id;
-  s += "'frameborder='0' width='100%' height='1600px'></iframe>"
+  s += "'frameborder='0' width='100%' height='700px'></iframe>"
   frame.innerHTML += s
   presetting.login(false, options => {
     rtc = new RtcClient(options);
@@ -107,14 +107,14 @@ function setBtnClickFuc() {
   //open or close camera
   $('#video-btn').on('click', () => {
     if (isCamOn) {
-      $('#video-btn').attr('src', './img/big-camera-off.png');
+      $('#video-btn').attr("src", "./video/img/big-camera-off.png");
       $('#member-me')
         .find('.member-video-btn')
         .attr('src', 'img/camera-off.png');
       isCamOn = false;
       muteVideo();
     } else {
-      $('#video-btn').attr('src', './img/big-camera-on.png');
+      $('#video-btn').attr("src", "./video/img/big-camera-on.png");
       $('#member-me')
         .find('.member-video-btn')
         .attr('src', 'img/camera-on.png');
@@ -125,14 +125,14 @@ function setBtnClickFuc() {
   //open or close microphone
   $('#mic-btn').on('click', () => {
     if (isMicOn) {
-      $('#mic-btn').attr('src', './img/big-mic-off.png');
+      $('#mic-btn').attr("src", "./video/img/big-mic-off.png");
       $('#member-me')
         .find('.member-audio-btn')
         .attr('src', 'img/mic-off.png');
       isMicOn = false;
       muteAudio();
     } else {
-      $('#mic-btn').attr('src', './img/big-mic-on.png');
+      $('#mic-btn').attr("src", "./video/img/big-mic-on.png");
       $('#member-me')
         .find('.member-audio-btn')
         .attr('src', 'img/mic-on.png');
@@ -358,9 +358,9 @@ function resetView() {
   isScreenOn = false;
   isJoined = true;
   $('#main-video-btns').hide();
-  $('#video-btn').attr('src', './img/big-camera-on.png');
-  $('#mic-btn').attr('src', './img/big-mic-on.png');
-  $('#screen-btn').attr('src', './img/screen-off.png');
+  $('#video-btn').attr("src", "./vedio/img/big-camera-on.png");
+  $('#mic-btn').attr('src', './vedio/img/big-mic-on.png');
+  $('#screen-btn').attr('src', "./vedio/img/screen-off.png");
   $('#member-me')
     .find('.member-video-btn')
     .attr('src', 'img/camera-on.png');
