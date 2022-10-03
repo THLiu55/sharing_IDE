@@ -21,7 +21,11 @@ function login() {
     return;
   }
   let id=document.getElementById("roomId").value;
-  document.getElementById("iframe").setAttribute("src",'localhost:3000?id='+id);
+  let frame = document.getElementById("frame-id");
+  var s = "<iframe id='iframe' src='http://localhost:3000?id="
+  s += id;
+  s += "'frameborder='0' width='70%' height='60%'></iframe>"
+  frame.innerHTML += s
   presetting.login(false, options => {
     rtc = new RtcClient(options);
     join();

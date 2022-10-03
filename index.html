@@ -48,8 +48,9 @@
                     </button>
                     <!-- 摄像头 麦克风 -->
                     <div class="row-div" style="width: 100%; height: 105px; justify-content: center">
-                        <img id="camera" style="height: 27px" src="./video/img/camera.png" onClick="event.cancelBubble = true"
-                            data-toggle="popover" data-placement="top" title="" data-content="">
+                        <img id="camera" style="height: 27px" src="./video/img/camera.png"
+                            onClick="event.cancelBubble = true" data-toggle="popover" data-placement="top" title=""
+                            data-content="">
                         <!-- 选择摄像头 -->
                         <div id="camera-option" style="display: none"></div>
                         <div style="width: 100px"></div>
@@ -74,7 +75,7 @@
                                 <use xlink:href="#icon-cameraIcon"></use>
                             </svg>
                         </div>
-                        <div id="connect-voice"  class="connect icon-normal">
+                        <div id="connect-voice" class="connect icon-normal">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-voice"></use>
                             </svg>
@@ -107,7 +108,7 @@
                                 <use xlink:href="#icon-cameraIcon"></use>
                             </svg>
                         </div>
-                        <div id="device-voice"  class="device icon-normal">
+                        <div id="device-voice" class="device icon-normal">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-voice"></use>
                             </svg>
@@ -131,7 +132,8 @@
                         <!-- 连接结果 -->
                         <div id="connect-info" style="max-width: 60%;"></div>
                         <!-- 错误icon及错误解决指引 -->
-                        <div id="connect-attention-container" class="connect-attention-container" style="display: none;">
+                        <div id="connect-attention-container" class="connect-attention-container"
+                            style="display: none;">
                             <div id="connect-attention-icon" class="connect-attention-icon">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-warn"></use>
@@ -198,7 +200,8 @@
                         </div>
                         <div class="audio-control">
                             <div class="audio-control-info">请调高设备音量, 点击播放下面的音频试试～</div>
-                            <audio id="audio-player" src="https://web.sdk.qcloud.com/trtc/webrtc/assets/bgm-test.mp3" controls></audio>
+                            <audio id="audio-player" src="https://web.sdk.qcloud.com/trtc/webrtc/assets/bgm-test.mp3"
+                                controls></audio>
                         </div>
                         <div class="testing-info-container">
                             <div class="testing-info">是否可以听到声音？</div>
@@ -384,12 +387,12 @@
             </div>
             <!-- content -->
             <!-- <div class="row-div" style="height: 100%; width: 100%; padding: 10px"> -->
-                <!-- <div class="col-div" style="width: 340px; height: 100%; padding: 10px"> -->
-                    <!-- <div class="col-div card" style="width: 100%; height: 100%"> -->
-                        <!-- 成员列表 -->
-                        <!-- <div id="member-list" class="col-div" style="width: 100%; justify-content: flex-start; flex: 1"> -->
-                            <!-- member -->
-                            <!-- <div id="member-me" style="width: 100%; padding-left: 20px">
+            <!-- <div class="col-div" style="width: 340px; height: 100%; padding: 10px"> -->
+            <!-- <div class="col-div card" style="width: 100%; height: 100%"> -->
+            <!-- 成员列表 -->
+            <!-- <div id="member-list" class="col-div" style="width: 100%; justify-content: flex-start; flex: 1"> -->
+            <!-- member -->
+            <!-- <div id="member-me" style="width: 100%; padding-left: 20px">
                                 <div class="row-div member"
                                     style="width: 100%; height: 50px; justify-content: space-between">
                                     <div class="member-id">(我)</div>
@@ -409,9 +412,12 @@
                         </div>
                     </div>
                 </div> -->
+            <div class="framenvideocontainer">
 
-                <div class="framenvideocontainer">
-                <iframe id="iframe" src="http://localhost:3000?id=1" frameborder="0" width="100%" height="1500px"></iframe>
+                <div id="frame-id">
+
+                </div>
+
 
                 <!-- 视频网格 -->
                 <div id="video-grid" style="height: 20px; flex: 1; ">
@@ -427,8 +433,11 @@
                         </div>
                         <div id="mask_main" class="mask col-div">
                             <!-- “摄像头未开启”遮罩 -->
-                            <div style="height: 100%; width: 100%; position: absolute; background-color: #D8D8D8; top: 0; left: 0;"></div>
-                            <img style="width: 63px; height: 69px; z-index: 10;" src="./video/img/camera-max.png" alt="">
+                            <div
+                                style="height: 100%; width: 100%; position: absolute; background-color: #D8D8D8; top: 0; left: 0;">
+                            </div>
+                            <img style="width: 63px; height: 69px; z-index: 10;" src="./video/img/camera-max.png"
+                                alt="">
                             <div style="height: 10px"></div>
                             <div style="z-index: 10">摄像头未打开</div>
                         </div>
@@ -436,8 +445,8 @@
                     <!-- 小视频 -->
                 </div>
             </div>
-            </div>
         </div>
+    </div>
     </div>
     <!-- 展示不支持webRTC的提示 -->
     <div id="remind-info-container" style="justify-content: center; display: none;">
@@ -468,7 +477,7 @@
             $('body').bootstrapMaterialDesign();
         });
     </script>
-    <script src="./video/js/lib-generate-test-usersig.min.js"></script>	
+    <script src="./video/js/lib-generate-test-usersig.min.js"></script>
     <script src="./video/js/debug/GenerateTestUserSig.js"></script>
     <script src="./video/js/iconfont.js"></script>
     <script src="./video/js/trtc.js"></script>
@@ -481,7 +490,7 @@
     <script src="./video/js/index.js"></script>
 
     <script>
-    
+
     </script>
 </body>
 
