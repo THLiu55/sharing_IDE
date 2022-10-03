@@ -24,7 +24,7 @@ function login() {
   let frame = document.getElementById("frame-id");
   var s = "<iframe id='iframe' src='http://localhost:3000?id="
   s += id;
-  s += "'frameborder='0' width='100%' height='100%'></iframe>"
+  s += "'frameborder='0' width='100%' height='1600px'></iframe>"
   frame.innerHTML += s
   presetting.login(false, options => {
     rtc = new RtcClient(options);
