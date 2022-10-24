@@ -112,3 +112,18 @@ div[id^=player] {
     margin-bottom: 50px;
 
 }
+.compilebtn{
+    position: fixed;
+    top: 78%;
+    left: 66%;
+}
+#language{
+    position: fixed;
+    top: 70%;
+    left: 66%;
+}
+.boardbtn{
+    position: fixed;
+    top: 70%;
+    left: 66%;
+}
