@@ -10,6 +10,15 @@ let share = null;
 let shareUserId = '';
 let cameraId = '';
 let micId = '';
+let id = ''
+let s = ''
+let sb = ''
+let isIDE = true
+
+const frame = document.getElementById("frame-id");
+
+const frame2 = document.getElementById("board-frame-id");
+
 
 function login() {
   if ($('#userId').val() == '') {
@@ -20,12 +29,19 @@ function login() {
     alert('房间号不能为空！');
     return;
   }
-  let id=document.getElementById("roomId").value;
-  let frame = document.getElementById("frame-id");
-  var s = "<iframe id='iframe' src='http://localhost:3000?id="
+  id=document.getElementById("roomId").value;
+  s = "<iframe id='iframe' src='http://localhost:3000?id="
   s += id;
   s += "'frameborder='0' width='100%' height='600px'></iframe>"
-  frame.innerHTML += s
+  frame.innerHTML = s
+
+
+  sb = "<iframe id='iframe' src='http://localhost:3002?key="
+  sb += id
+  sb += "'frameborder='0' width='100%' height='600px'></iframe>"
+  frame2.innerHTML = sb
+
+
   presetting.login(false, options => {
     rtc = new RtcClient(options);
     join();
@@ -34,6 +50,18 @@ function login() {
     shareUserId = options.userId;
     share = new ShareClient(options);
   });
+}
+
+function changeFrame() {
+  if (isIDE) {
+    frame.style.visibility = "hidden"
+    frame2.style.visibility = "visible"
+    isIDE = false
+  } else {
+    frame2.style.visibility = "hidden"
+    frame.style.visibility = "visible"
+    isIDE = true
+  }
 }
 
 function join() {
