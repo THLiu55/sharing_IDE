@@ -68,6 +68,7 @@ function join() {
   rtc.join();
   $('#login-root').hide();
   $('#room-root').show();
+  $('#complier').show();
   $('#header-roomId').html('房间号: ' + $('#roomId').val());
   $('#member-me')
     .find('.member-id')
@@ -191,6 +192,7 @@ function setBtnClickFuc() {
   $('#logout-btn').on('click', () => {
     leave();
     $('#room-root').hide();
+    $('#complier').hide();
     $('#login-root').show();
   });
   //switch main video

@@ -121,7 +121,7 @@ div[id^=player] {
 
 }
 .compilebtn{
-    position: fixed;
+    position: absolute;
     top: 78%;
     left: 66%;
 }
@@ -131,7 +131,21 @@ div[id^=player] {
     left: 66%;
 }
 .boardbtn{
-    position: fixed;
+    position: absolute;
     top: 70%;
     left: 66%;
+}
+.complierctnr{
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f1f1;
+    margin-bottom: 20px;
+}
+.compliertext{
+    resize: none;
+    border: #d8d8d8;
+    background-color: #ffffff;
+    padding: 20px;
+    color: rgb(7, 2, 2);
+    font-size: 1em;
 }
