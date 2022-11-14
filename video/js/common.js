@@ -30,13 +30,12 @@ function login() {
     return;
   }
   id=document.getElementById("roomId").value;
-  s = "<iframe id='iframe' src='http://localhost:3000?id="
+  s = "<iframe id='iframe00' src='http://localhost:3000?id="
   s += id;
   s += "'frameborder='0' width='100%' height='600px'></iframe>"
   frame.innerHTML = s
 
-
-  sb = "<iframe id='iframe' src='http://localhost:3002?key="
+  sb = "<iframe id='iframe11' src='http://localhost:3002?key="
   sb += id
   sb += "'frameborder='0' width='100%' height='600px'></iframe>"
   frame2.innerHTML = sb

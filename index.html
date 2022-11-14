@@ -51,13 +51,13 @@
                         <img id="camera" style="height: 27px" src="./video/img/camera.png"
                             onClick="event.cancelBubble = true" data-toggle="popover" data-placement="top" title=""
                             data-content="">
-                         选择摄像头 
+                         选择摄像头
                         <div id="camera-option" style="display: none"></div>
                         <div style="width: 100px"></div>
                         <img id="microphone" style="height: 27px" src="./img/mic.png"
                             onClick="event.cancelBubble = true" data-toggle="popover" data-placement="top" title=""
                             data-content="">
-                        选择麦克风 
+                        选择麦克风
                         <div id="mic-option" style="display: none"></div>
                     </div> -->
                     <!-- 设备检测按钮 -->
@@ -424,8 +424,8 @@
                 </div>
 
                 <button class="btn btn-info boardbtn" id="btn-join" onclick="changeFrame()" style="margin: 10px;">Need White Board?</button>
-                    
-                <button class="btn btn-primary compilebtn" id="btn-join" style="margin: 10px;">Compile</button>
+
+                <button class="btn btn-primary compilebtn" id="compile" style="margin: 10px;">Compile</button>
                 <!-- 视频网格 -->
                 <div id="video-grid" style="height: 20px; flex: 1; ">
                     <!-- 主视频 -->
@@ -437,7 +437,7 @@
                                 src="./video/img/big-camera-on.png" alt="">
                             <img id="mic-btn" style="width: 50px; height: 50px" onClick="event.cancelBubble = true"
                                 src="./video/img/big-mic-on.png" alt="">
-                            
+
                             </div>
                         <div id="mask_main" class="mask col-div">
                             <!-- “摄像头未开启”遮罩 -->
@@ -452,7 +452,7 @@
                     </div>
                     <!-- 小视频 -->
                 </div>
-<!-- 
+<!--
                 <div></div>
                 <div></div>
                 <div></div>
@@ -460,8 +460,7 @@
              </div>
         </div>
         <div id="complier"class="complier" style="margin-left: 20px; min-width: 600px; display: none;">
-        <textarea class="compliertext" style="margin-left: 40px; min-width: 900px; min-height: 200px;"></textarea>
-                
+        <textarea id="code-out" class="compliertext" style="margin-left: 40px; min-width: 900px; min-height: 200px;"></textarea>
             </div>
         </div>
     </div>
@@ -507,9 +506,33 @@
     <script src="./video/js/device-testing.js"></script>
     <script src="./video/js/index.js"></script>
 
-    <script>
+
+     <script>
+        function getUrlParam(name) {
+		//构造一个含有目标参数的正则表达式对象
+            const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            //匹配目标参数
+            const r = window.location.search.substr(1).match(reg);
+		//返回参数值
+            if(r != null) {
+                return decodeURI(r[2]);
+            }
+            return null;
+        }
+
+
+        function change() {
+            let name = document.getElementById("userId");
+            let id = document.getElementById("roomId");
+            name.value=getUrlParam("name");
+            id.value=getUrlParam("id");
+        }
+
+        change();
 
     </script>
+
+
 </body>
 
 </html>
