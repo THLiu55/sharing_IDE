@@ -425,7 +425,7 @@
 
                 <button class="btn btn-info boardbtn" id="btn-join" onclick="changeFrame()" style="margin: 10px;">Need White Board?</button>
 
-                <button class="btn btn-primary compilebtn" id="compile" style="margin: 10px;">Compile</button>
+                <button class="btn btn-primary compilebtn" id="save" style="margin: 10px;" hidden>Save Code</button>
                 <!-- 视频网格 -->
                 <div id="video-grid" style="height: 20px; flex: 1; ">
                     <!-- 主视频 -->
@@ -508,12 +508,14 @@
 
 
      <script>
+        let roomId=0
+        let interviewer = 0
         function getUrlParam(name) {
 		//构造一个含有目标参数的正则表达式对象
             const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             //匹配目标参数
             const r = window.location.search.substr(1).match(reg);
-		//返回参数值
+            //返回参数值
             if(r != null) {
                 return decodeURI(r[2]);
             }
@@ -526,7 +528,38 @@
             let id = document.getElementById("roomId");
             name.value=getUrlParam("name");
             id.value=getUrlParam("id");
+            interviewer = getUrlParam("interviewer")
+            roomId=id.value
         }
+
+        let save = document.getElementById("save")
+        save.hidden = true
+        let source = ""
+
+        window.addEventListener('message',function (event) {
+            document.getElementById("code-out").value=event.data["out"]
+            source = event.data["source"]
+            if (interviewer!==null){
+                save.hidden = false
+            }
+
+        })
+
+        $(function () {
+            $("#save").click(function () {
+                $.ajax({
+                  url: "http://localhost:5000/finish",
+                  method: 'POST',
+                  data: {
+                      "id":roomId,
+                      "code":source
+                  },
+                  success: function (res) {
+                    alert("Code is stored successfully")
+                  }
+                })
+            })
+        })
 
         change();
 
