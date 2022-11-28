@@ -423,7 +423,9 @@
 
                 </div>
 
-                <button class="btn btn-info boardbtn" id="btn-join" onclick="changeFrame()" style="margin: 10px;">Need White Board?</button>
+
+                <button class="btn btn-info boardbtn" id="btn-join" onclick="changeFrame()" style="margin: 10px;">Open White Board</button>
+
 
                 <button class="btn btn-primary compilebtn" id="save" style="margin: 10px;" hidden>Save Code</button>
                 <!-- 视频网格 -->
@@ -548,7 +550,7 @@
         $(function () {
             $("#save").click(function () {
                 $.ajax({
-                  url: "http://localhost:5000/finish",
+                  url: "http://Flask-env.eba-picueuem.ap-northeast-1.elasticbeanstalk.com/finish",
                   method: 'POST',
                   data: {
                       "id":roomId,

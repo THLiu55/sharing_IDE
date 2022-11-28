@@ -5,5 +5,5 @@ var http = require('http').Server(app);
 app.use('', express.static('./'))
 
   // 监听端口
-http.listen(3001, function(){
+http.listen(8080, function(){
 });

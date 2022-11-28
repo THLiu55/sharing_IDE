@@ -30,15 +30,10 @@ function login() {
     return;
   }
   id=document.getElementById("roomId").value;
-  s = "<iframe id='iframe00' src='http://localhost:3000?id="
+  s = "<iframe id='iframe00' src='https://sharingide-env.eba-xazqrtbw.ap-northeast-1.elasticbeanstalk.com?id="
   s += id;
   s += "'frameborder='0' width='100%' height='600px'></iframe>"
   frame.innerHTML = s
-
-  sb = "<iframe id='iframe11' src='http://localhost:3002?key="
-  sb += id
-  sb += "'frameborder='0' width='100%' height='600px'></iframe>"
-  frame2.innerHTML = sb
 
 
   presetting.login(false, options => {
@@ -52,15 +47,8 @@ function login() {
 }
 
 function changeFrame() {
-  if (isIDE) {
-    frame.style.visibility = "hidden"
-    frame2.style.visibility = "visible"
-    isIDE = false
-  } else {
-    frame2.style.visibility = "hidden"
-    frame.style.visibility = "visible"
-    isIDE = true
-  }
+  id=document.getElementById("roomId").value;
+  window.open('http://white-env.eba-8tqqhyq3.ap-northeast-1.elasticbeanstalk.com?key='+id,"_blank");
 }
 
 function join() {
