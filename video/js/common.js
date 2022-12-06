@@ -177,6 +177,7 @@ function setBtnClickFuc() {
   );
   //logout
   $('#logout-btn').on('click', () => {
+
     leave();
     $('#room-root').hide();
     $('#complier').hide();

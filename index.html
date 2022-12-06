@@ -380,6 +380,13 @@
                     <img id="screen-btn" style="width: 65px; height: 65px" src="./video/img/screen-off.png" alt="">
                     <div style="width: 20px"></div>
                     <img id="logout-btn" style="width: 65px; height: 65px" src="./video/img/logout.png" alt="">
+                    <div style="width: 30px"></div>
+                    <img id="btn-join" onclick="changeFrame()"  style="width: 55px; height: 55px; margin-top: 5px;" src="./video/img/whiteboard.svg" alt="" title="Open White borad">
+                    <div style="width: 30px"></div>
+                    <img id="time-join" onclick="timeRecord()" hidden style="width: 55px; height: 55px; margin-top: 5px;" src="./video/img/timer.svg" alt="" title="Timer">
+                    <div>
+                        <p id="time-text" hidden style="font-size: 1.5rem; font-weight:900; color:darkblue; margin-top: 15px;margin-left: 20px;">0H: 0M: 0S</p >
+                    </div>
                 </div>
                 <!-- 房间号 -->
                 <!-- <div id="header-roomId"
@@ -424,10 +431,10 @@
                 </div>
 
 
-                <button class="btn btn-info boardbtn" id="btn-join" onclick="changeFrame()" style="margin: 10px;">Open White Board</button>
+<!--                <button class="btn btn-info boardbtn" id="btn-join" onclick="changeFrame()" style="margin: 10px;">Open White Board</button>-->
 
 
-                <button class="btn btn-primary compilebtn" id="save" style="margin: 10px;" hidden>Save Code</button>
+<!--                <button class="btn btn-primary compilebtn" id="save" style="margin: 10px;" hidden>Save Code</button>-->
                 <!-- 视频网格 -->
                 <div id="video-grid" style="height: 20px; flex: 1; ">
                     <!-- 主视频 -->
@@ -531,26 +538,30 @@
             name.value=getUrlParam("name");
             id.value=getUrlParam("id");
             interviewer = getUrlParam("interviewer")
+            if (interviewer){
+                document.getElementById("time-join").hidden = false
+                document.getElementById("time-text").hidden = false
+            }
             roomId=id.value
         }
 
-        let save = document.getElementById("save")
-        save.hidden = true
-        let source = ""
+        // let save = document.getElementById("save")
+        // save.hidden = true
+        // let source = " "
 
         window.addEventListener('message',function (event) {
             document.getElementById("code-out").value=event.data["out"]
             source = event.data["source"]
-            if (interviewer!==null){
-                save.hidden = false
-            }
+
 
         })
 
         $(function () {
+            // $("#save").click(function () {
             $("#save").click(function () {
                 $.ajax({
-                  url: "http://New-env.eba-uetq9cbn.ap-northeast-1.elasticbeanstalk.com/finish",
+                  //url: "https://Final-env.eba-2hjggu4w.ap-northeast-1.elasticbeanstalk.com/finish",
+                  url: "http://127.0.0.1/finish",
                   method: 'POST',
                   data: {
                       "id":roomId,
@@ -565,7 +576,61 @@
 
         change();
 
+
+
+
+
+
     </script>
+
+<script>
+    let millisecond = 0;
+    let second = 0;
+    let minute = 0;
+    let hour = 0;
+    let b = true;
+    let int;
+
+    function timeRecord() {
+        if (b){
+            int = setInterval(timer,50);
+            b = false;
+        }else {
+            stop();
+            b = true;
+        }
+    }
+
+
+
+        //计时函数
+    function timer()
+    {
+        millisecond=millisecond+50;
+        if(millisecond>=1000) {
+            millisecond=0;
+            second=second+1;
+          }
+          if(second>=60)
+          {
+            second=0;
+            minute=minute+1;
+          }
+
+          if(minute>=60)
+          {
+            minute=0;
+            hour=hour+1;
+          }
+          document.getElementById('time-text').innerHTML=hour+'H: '+minute+'M: '+second+'S ';
+
+        }
+        //暂停函数
+        function stop()
+        {
+          window.clearInterval(int);
+        }
+</script>
 
 
 </body>
